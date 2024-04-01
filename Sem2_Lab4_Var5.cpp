@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 
 using namespace std;
 
@@ -6,6 +6,10 @@ class Complex {
 public:
 	double a;
 	double b;
+};
+
+class Complex_operation : public Complex {
+public:
 	void Complex_minus(double x1, double y1, double x2, double y2) {
 		double z1, z2;
 		z1 = x1 - y1;
@@ -47,7 +51,7 @@ public:
 int main()
 {
 	setlocale(LC_ALL, "RUS");
-	Complex x, y, z;
+	Complex_operation x, y, z;
 	int n;
 	cout << "Введите значения a и b - действительных частей первого комплексного числа: ";
 	cin >> x.a >> x.b;
@@ -58,13 +62,13 @@ int main()
 	switch (n)
 	{
 	case 1:
-		z.Complex_minus(x.a, y.a, x.b, y.b);
+		z.Complex_plus(x.a, y.a, x.b, y.b);
 		break;
 	case 2:
 		z.Complex_minus(x.a, y.a, x.b, y.b);
 		break;
 	case 3:
-		z.Complex_minus(x.a, y.a, x.b, y.b);
+		z.Complex_multiplication(x.a, y.a, x.b, y.b);
 		break;
 	default:
 		cout << "Вы ввели неправильную операцию.";
